@@ -17,101 +17,297 @@
   --cream:#fff8e9;
   --white:#fff;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
   font-family:Arial,"Noto Sans Devanagari",sans-serif;
   background:var(--cream);
   color:#302027;
   line-height:1.7;
 }
-a{text-decoration:none}
-header{
+
+a { text-decoration:none; }
+
+header {
   background:linear-gradient(135deg,var(--dark),var(--maroon));
-  color:white;padding:17px 6%;
+  color:white;
+  padding:17px 6%;
   border-bottom:3px solid var(--gold);
-  display:flex;justify-content:space-between;
-  align-items:center;flex-wrap:wrap;gap:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
 }
-.brand{font-size:22px;font-weight:bold;color:var(--gold)}
-.brand small{display:block;color:white;font-size:12px;font-weight:normal}
-nav{display:flex;gap:17px;flex-wrap:wrap}
-nav a{color:white;font-size:14px}
-nav a:hover{color:var(--gold)}
-.hero{
-  text-align:center;padding:85px 20px;color:white;
+
+.brand {
+  font-size:22px;
+  font-weight:bold;
+  color:var(--gold);
+}
+
+.brand small {
+  display:block;
+  color:white;
+  font-size:12px;
+  font-weight:normal;
+}
+
+nav {
+  display:flex;
+  gap:17px;
+  flex-wrap:wrap;
+}
+
+nav a {
+  color:white;
+  font-size:14px;
+  padding:5px 0;
+  border-bottom:2px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+  color:var(--gold);
+  border-bottom-color:var(--gold);
+}
+
+/* अलग-अलग पेज दिखाने की व्यवस्था */
+.page {
+  display:none;
+  animation:fadeIn .3s ease;
+}
+
+.page.active {
+  display:block;
+}
+
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(5px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+.hero {
+  text-align:center;
+  padding:85px 20px;
+  color:white;
   background:linear-gradient(135deg,#260713,#671b37,#3b1022);
   border-bottom:5px solid var(--gold);
 }
-.logo{
-  width:90px;height:90px;border:2px solid var(--gold);
-  border-radius:50%;display:grid;place-items:center;
-  margin:0 auto 20px;color:var(--gold);font-size:35px;
+
+.logo {
+  width:90px;
+  height:90px;
+  border:2px solid var(--gold);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  margin:0 auto 20px;
+  color:var(--gold);
+  font-size:35px;
 }
-.hero h1{font-size:clamp(28px,6vw,48px);color:var(--gold);margin-bottom:12px}
-.hero p{max-width:700px;margin:0 auto 25px;font-size:17px}
-.btn{
-  display:inline-block;background:var(--gold);color:var(--dark);
-  padding:12px 24px;border-radius:30px;font-weight:bold;
-  margin:5px;border:1px solid var(--gold);cursor:pointer;
+
+.hero h1 {
+  font-size:clamp(28px,6vw,48px);
+  color:var(--gold);
+  margin-bottom:12px;
 }
-.btn.outline{background:transparent;color:var(--gold)}
-section{padding:60px 7%}
-.section-title{text-align:center;color:var(--maroon);font-size:29px;margin-bottom:12px}
-.section-sub{text-align:center;max-width:700px;margin:0 auto 30px;color:#69545d}
-.about{
-  max-width:900px;margin:auto;text-align:center;
-  background:white;padding:30px;border-radius:15px;
-  border:1px solid #ead8b8;box-shadow:0 5px 20px #0000000b;
+
+.hero p {
+  max-width:700px;
+  margin:0 auto 25px;
+  font-size:17px;
 }
-.cards{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;margin-top:30px;
+
+.btn {
+  display:inline-block;
+  background:var(--gold);
+  color:var(--dark);
+  padding:12px 24px;
+  border-radius:30px;
+  font-weight:bold;
+  margin:5px;
+  border:1px solid var(--gold);
+  cursor:pointer;
 }
-.card{
-  background:white;padding:25px 20px;border-radius:15px;
-  text-align:center;border:1px solid #ead8b8;
+
+.btn.outline {
+  background:transparent;
+  color:var(--gold);
+}
+
+section.content-section {
+  padding:60px 7%;
+  min-height:65vh;
+}
+
+.section-title {
+  text-align:center;
+  color:var(--maroon);
+  font-size:29px;
+  margin-bottom:12px;
+}
+
+.section-sub {
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 30px;
+  color:#69545d;
+}
+
+.about {
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  border:1px solid #ead8b8;
+  box-shadow:0 5px 20px #0000000b;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+
+.card {
+  background:white;
+  padding:25px 20px;
+  border-radius:15px;
+  text-align:center;
+  border:1px solid #ead8b8;
   box-shadow:0 5px 18px #0000000a;
 }
-.card .symbol{font-size:38px;color:var(--gold)}
-.card h3{color:var(--maroon);margin:10px 0}
-.steps{max-width:750px;margin:auto}
-.steps p{
-  background:white;padding:15px 20px;margin:12px 0;
-  border-left:4px solid var(--gold);border-radius:8px;
+
+.card .symbol {
+  font-size:38px;
+  color:var(--gold);
 }
-.contact-area{background:#f4ead9}
-form{
-  max-width:700px;margin:25px auto 0;background:white;
-  padding:25px;border-radius:15px;border:1px solid #ead8b8;
+
+.card h3 {
+  color:var(--maroon);
+  margin:10px 0;
 }
-label{display:block;font-weight:bold;color:var(--maroon);margin:12px 0 5px}
-input,select,textarea{
-  width:100%;padding:12px;border:1px solid #d9c8b6;
-  border-radius:8px;font-size:15px;background:#fffdf9;
+
+.steps {
+  max-width:750px;
+  margin:auto;
 }
-textarea{min-height:100px;resize:vertical}
-form button{width:100%;margin:20px 0 0;font-size:16px}
-.socials{
-  display:flex;justify-content:center;gap:14px;
-  flex-wrap:wrap;margin-top:22px;
+
+.steps p {
+  background:white;
+  padding:15px 20px;
+  margin:12px 0;
+  border-left:4px solid var(--gold);
+  border-radius:8px;
 }
-.socials a{
-  background:var(--maroon);color:white;padding:10px 17px;
-  border-radius:25px;font-size:14px;border:1px solid var(--gold);
+
+.contact-area {
+  background:#f4ead9;
 }
-.socials a:hover{background:var(--gold);color:var(--dark)}
-footer{
-  background:var(--dark);color:#f9e8c6;text-align:center;
-  padding:28px 15px;border-top:3px solid var(--gold);
+
+form {
+  max-width:700px;
+  margin:25px auto 0;
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  border:1px solid #ead8b8;
 }
-footer p{margin:5px}
-.contact-hidden{color:var(--gold);letter-spacing:3px;font-weight:bold}
-@media(max-width:600px){
-  header{justify-content:center;text-align:center}
-  nav{justify-content:center}
-  .hero{padding:65px 17px}
-  section{padding:45px 5%}
+
+label {
+  display:block;
+  font-weight:bold;
+  color:var(--maroon);
+  margin:12px 0 5px;
+}
+
+input,select,textarea {
+  width:100%;
+  padding:12px;
+  border:1px solid #d9c8b6;
+  border-radius:8px;
+  font-size:15px;
+  background:#fffdf9;
+}
+
+textarea {
+  min-height:100px;
+  resize:vertical;
+}
+
+form button {
+  width:100%;
+  margin:20px 0 0;
+  font-size:16px;
+}
+
+.socials {
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.socials a {
+  background:var(--maroon);
+  color:white;
+  padding:10px 17px;
+  border-radius:25px;
+  font-size:14px;
+  border:1px solid var(--gold);
+}
+
+.socials a:hover {
+  background:var(--gold);
+  color:var(--dark);
+}
+
+footer {
+  background:var(--dark);
+  color:#f9e8c6;
+  text-align:center;
+  padding:28px 15px;
+  border-top:3px solid var(--gold);
+}
+
+footer p { margin:5px; }
+
+.contact-hidden {
+  color:var(--gold);
+  letter-spacing:3px;
+  font-weight:bold;
+}
+
+@media(max-width:600px) {
+  header {
+    justify-content:center;
+    text-align:center;
+  }
+
+  nav {
+    justify-content:center;
+    gap:12px;
+  }
+
+  nav a { font-size:13px; }
+
+  .hero { padding:65px 17px; }
+
+  section.content-section {
+    padding:45px 5%;
+  }
 }
 </style>
 </head>
@@ -119,162 +315,426 @@ footer p{margin:5px}
 <body>
 
 <header>
-  <a href="#home" class="brand">
+  <a href="#home" class="brand" data-page="home">
     ❖ मिथिलांचल विवाह मंच ❖
     <small>MITHILANCHAL VIVAH MANCH</small>
   </a>
+
   <nav>
-    <a href="#home">होम</a>
-    <a href="#about">हमर परिचय</a>
-    <a href="#services">हमर सेवा</a>
-    <a href="#process">प्रक्रिया</a>
-    <a href="#contact">संपर्क</a>
+    <a href="#home" data-page="home" class="active">होम</a>
+    <a href="#about" data-page="about">हमर परिचय</a>
+    <a href="#services" data-page="services">हमर सेवा</a>
+    <a href="#process" data-page="process">प्रक्रिया</a>
+    <a href="#contact" data-page="contact">संपर्क</a>
   </nav>
 </header>
 
 <main>
 
-<section class="hero" id="home">
-  <div class="logo">❖</div>
-  <h1>मिथिलांचल विवाह मंच</h1>
-  <p>मैथिल समाजक योग्य वर-वधूक परिचय आ वैवाहिक संबंध लेल एकटा समर्पित मंच।</p>
-  <a class="btn" href="#contact">अपन परिचय भेजू</a>
-  <a class="btn outline" href="#about">हमर परिचय</a>
-</section>
+<!-- HOME PAGE -->
+<div class="page active" id="home">
 
-<section id="about">
-  <h2 class="section-title">हमर परिचय</h2>
-  <p class="section-sub">मैथिल समाजक परंपरा, संस्कार आ अपनत्वक संग।</p>
-  <div class="about">
-    <h3 style="color:#4b1024;margin-bottom:12px">स्वागत अछि अहाँक मिथिलांचल विवाह मंच पर</h3>
+  <section class="hero">
+    <div class="logo">❖</div>
+
+    <h1>मिथिलांचल विवाह मंच</h1>
+
     <p>
-      मिथिलांचल विवाह मंच मैथिल समाजक योग्य वर-वधूक परिचय
-      आ वैवाहिक संबंध स्थापित करबाक एकटा प्रयास अछि।
-      हमर उद्देश्य अछि जे समाजक लोक सभ एक-दोसरक परिवार,
-      संस्कार आ योग्यताक जानकारी प्राप्त क' सकथि।
+      मैथिल समाजक योग्य वर-वधूक परिचय आ वैवाहिक संबंध लेल
+      एकटा समर्पित मंच।
     </p>
-    <p style="margin-top:12px">
-      अहाँ अपन परिवारक योग्य वर अथवा वधूक परिचय मंच पर साझा
-      क' सकैत छी आ उपयुक्त संबंधक खोज में सहयोग प्राप्त क' सकैत छी।
+
+    <a class="btn" href="#contact" data-page="contact">
+      अपन परिचय भेजू
+    </a>
+
+    <a class="btn outline" href="#about" data-page="about">
+      हमर परिचय
+    </a>
+  </section>
+
+  <section class="content-section">
+    <h2 class="section-title">मिथिलांचल विवाह मंच में स्वागत अछि</h2>
+
+    <p class="section-sub">
+      मैथिल समाजक परंपरा, संस्कार आ अपनत्वक संग।
     </p>
-  </div>
-</section>
 
-<section id="services">
-  <h2 class="section-title">हमर सेवा</h2>
-  <p class="section-sub">वैवाहिक परिचय आ संबंधक खोज में सहयोग।</p>
+    <div class="about">
+      <h3 style="color:#4b1024;margin-bottom:12px">
+        अहाँक अपन वैवाहिक मंच
+      </h3>
 
-  <div class="cards">
-    <div class="card">
-      <div class="symbol">👨</div>
-      <h3>योग्य वरक परिचय</h3>
-      <p>योग्य वरक शिक्षा, परिवार आ अन्य आवश्यक जानकारीक परिचय।</p>
+      <p>
+        मैथिल समाजक योग्य वर-वधूक परिचय आ वैवाहिक संबंध
+        स्थापित करबाक एकटा प्रयास।
+      </p>
+
+      <a href="#services" data-page="services" class="btn">
+        हमर सेवा देखू
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ABOUT PAGE -->
+<div class="page" id="about">
+
+  <section class="content-section">
+
+    <h2 class="section-title">हमर परिचय</h2>
+
+    <p class="section-sub">
+      मैथिल समाजक परंपरा, संस्कार आ अपनत्वक संग।
+    </p>
+
+    <div class="about">
+      <h3 style="color:#4b1024;margin-bottom:12px">
+        स्वागत अछि अहाँक मिथिलांचल विवाह मंच पर
+      </h3>
+
+      <p>
+        मिथिलांचल विवाह मंच मैथिल समाजक योग्य वर-वधूक परिचय
+        आ वैवाहिक संबंध स्थापित करबाक एकटा प्रयास अछि।
+        हमर उद्देश्य अछि जे समाजक लोक सभ एक-दोसरक परिवार,
+        संस्कार आ योग्यताक जानकारी प्राप्त क' सकथि।
+      </p>
+
+      <p style="margin-top:12px">
+        अहाँ अपन परिवारक योग्य वर अथवा वधूक परिचय मंच पर साझा
+        क' सकैत छी आ उपयुक्त संबंधक खोज में सहयोग प्राप्त
+        क' सकैत छी।
+      </p>
     </div>
 
-    <div class="card">
-      <div class="symbol">👩</div>
-      <h3>योग्य वधूक परिचय</h3>
-      <p>योग्य वधूक शिक्षा, परिवार आ अन्य आवश्यक जानकारीक परिचय।</p>
+  </section>
+</div>
+
+<!-- SERVICES PAGE -->
+<div class="page" id="services">
+
+  <section class="content-section">
+
+    <h2 class="section-title">हमर सेवा</h2>
+
+    <p class="section-sub">
+      वैवाहिक परिचय आ संबंधक खोज में सहयोग।
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="symbol">👨</div>
+        <h3>योग्य वरक परिचय</h3>
+        <p>
+          योग्य वरक शिक्षा, परिवार आ अन्य आवश्यक जानकारीक परिचय।
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="symbol">👩</div>
+        <h3>योग्य वधूक परिचय</h3>
+        <p>
+          योग्य वधूक शिक्षा, परिवार आ अन्य आवश्यक जानकारीक परिचय।
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="symbol">💍</div>
+        <h3>वैवाहिक संबंध</h3>
+        <p>
+          उपयुक्त परिवारक बीच परिचय आ संबंध स्थापित करबाक प्रयास।
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="symbol">🤝</div>
+        <h3>समाजक सहयोग</h3>
+        <p>
+          मैथिल समाजक लोक सभकेँ एक मंच पर जोड़बाक प्रयास।
+        </p>
+      </div>
+
     </div>
 
-    <div class="card">
-      <div class="symbol">💍</div>
-      <h3>वैवाहिक संबंध</h3>
-      <p>उपयुक्त परिवारक बीच परिचय आ संबंध स्थापित करबाक प्रयास।</p>
+  </section>
+</div>
+<!-- PROCESS PAGE -->
+<div class="page" id="process">
+
+  <section class="content-section">
+
+    <h2 class="section-title">अहाँ कोना जुड़ब?</h2>
+
+    <p class="section-sub">
+      मंच सँ जुड़बाक सरल प्रक्रिया।
+    </p>
+
+    <div class="steps">
+      <p>
+        <strong>01.</strong>
+        अपन अथवा परिवारक वर-वधूक परिचय तैयार करू।
+      </p>
+
+      <p>
+        <strong>02.</strong>
+        संपर्क पेज पर देल फॉर्म में आवश्यक जानकारी भरू।
+      </p>
+
+      <p>
+        <strong>03.</strong>
+        WhatsApp पर जानकारी भेजू।
+      </p>
+
+      <p>
+        <strong>04.</strong>
+        आवश्यक जानकारीक पुष्टि क' क' आगाँ संपर्क करू।
+      </p>
+
+      <div style="text-align:center;margin-top:25px">
+        <a href="#contact" data-page="contact" class="btn">
+          आब परिचय भेजू
+        </a>
+      </div>
     </div>
 
-    <div class="card">
-      <div class="symbol">🤝</div>
-      <h3>समाजक सहयोग</h3>
-      <p>मैथिल समाजक लोक सभकेँ एक मंच पर जोड़बाक प्रयास।</p>
+  </section>
+</div>
+
+<!-- CONTACT PAGE -->
+<div class="page" id="contact">
+
+  <section class="content-section contact-area">
+
+    <h2 class="section-title">अपन परिचय भेजू</h2>
+
+    <p class="section-sub">
+      नीचे जानकारी भरि WhatsApp पर भेजू।
+    </p>
+
+    <form id="profileForm">
+
+      <label for="person">परिचय केकर लेल अछि?</label>
+
+      <select id="person" required>
+        <option value="">चयन करू</option>
+        <option value="वर">वर</option>
+        <option value="वधू">वधू</option>
+      </select>
+
+      <label for="name">नाम</label>
+
+      <input
+        id="name"
+        type="text"
+        placeholder="अपन नाम लिखू"
+        required
+      >
+
+      <label for="age">उम्र</label>
+
+      <input
+        id="age"
+        type="number"
+        min="18"
+        max="100"
+        placeholder="उम्र लिखू"
+        required
+      >
+
+      <label for="education">शिक्षा</label>
+
+      <input
+        id="education"
+        type="text"
+        placeholder="शिक्षा लिखू"
+      >
+
+      <label for="city">निवास स्थान</label>
+
+      <input
+        id="city"
+        type="text"
+        placeholder="गाम / शहर / जिला"
+      >
+
+      <label for="details">अन्य जानकारी</label>
+
+      <textarea
+        id="details"
+        placeholder="परिवार आ अन्य आवश्यक जानकारी लिखू"
+      ></textarea>
+
+      <button class="btn" type="submit">
+        WhatsApp पर परिचय भेजू
+      </button>
+
+    </form>
+
+    <h2 class="section-title" style="margin-top:55px">
+      हमरा सोशल मीडिया पर जुड़ू
+    </h2>
+
+    <p class="section-sub">
+      मिथिलांचल विवाह मंचक संग जुड़ल रहू।
+    </p>
+
+    <div class="socials">
+
+      <a
+        href="https://www.facebook.com/profile.php?id=61588338102063"
+        target="_blank"
+        rel="noopener"
+      >
+        Facebook Page
+      </a>
+
+      <a
+        href="https://www.facebook.com/omMishraYo"
+        target="_blank"
+        rel="noopener"
+      >
+        Personal Facebook
+      </a>
+
+      <a
+        href="https://www.instagram.com/mithilanchalvivahmanch?bqrl=a2pzcTIxM2hueGI1"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
+
+      <a
+        href="https://wa.me/916299735655"
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp
+      </a>
+
     </div>
-  </div>
-</section>
 
-<section id="process">
-  <h2 class="section-title">अहाँ कोना जुड़ब?</h2>
-  <p class="section-sub">मंच सँ जुड़बाक सरल प्रक्रिया।</p>
-
-  <div class="steps">
-    <p><strong>01.</strong> अपन अथवा परिवारक वर-वधूक परिचय तैयार करू।</p>
-    <p><strong>02.</strong> नीचे देल फॉर्म में आवश्यक जानकारी भरू।</p>
-    <p><strong>03.</strong> WhatsApp पर जानकारी भेजू।</p>
-    <p><strong>04.</strong> आवश्यक जानकारीक पुष्टि क' क' आगाँ संपर्क करू।</p>
-  </div>
-</section>
-
-<section class="contact-area" id="contact">
-  <h2 class="section-title">अपन परिचय भेजू</h2>
-  <p class="section-sub">नीचे जानकारी भरि WhatsApp पर भेजू।</p>
-
-  <form id="profileForm">
-    <label for="person">परिचय केकर लेल अछि?</label>
-    <select id="person" required>
-      <option value="">चयन करू</option>
-      <option>वर</option>
-      <option>वधू</option>
-    </select>
-
-    <label for="name">नाम</label>
-    <input id="name" type="text" placeholder="अपन नाम लिखू" required>
-
-    <label for="age">उम्र</label>
-    <input id="age" type="number" min="18" max="100" placeholder="उम्र लिखू" required>
-
-    <label for="education">शिक्षा</label>
-    <input id="education" type="text" placeholder="शिक्षा लिखू">
-
-    <label for="city">निवास स्थान</label>
-    <input id="city" type="text" placeholder="गाम / शहर / जिला">
-
-    <label for="details">अन्य जानकारी</label>
-    <textarea id="details" placeholder="परिवार आ अन्य आवश्यक जानकारी लिखू"></textarea>
-
-    <button class="btn" type="submit">WhatsApp पर परिचय भेजू</button>
-  </form>
-</section>
-
-<section>
-  <h2 class="section-title">हमरा सोशल मीडिया पर जुड़ू</h2>
-  <p class="section-sub">मिथिलांचल विवाह मंचक संग जुड़ल रहू।</p>
-
-  <div class="socials">
-    <a href="https://www.facebook.com/profile.php?id=61588338102063" target="_blank" rel="noopener">Facebook Page</a>
-
-    <a href="https://www.facebook.com/omMishraYo" target="_blank" rel="noopener">Personal Facebook</a>
-
-<a href="https://www.instagram.com/mithilanchalvivahmanch?bqrl=a2pzcTIxM2hueGI1" target="_blank" rel="noopener">Instagram</a>
-
-    <a href="https://wa.me/916299735655" target="_blank" rel="noopener">WhatsApp</a>
-  </div>
-</section>
+  </section>
+</div>
 
 </main>
 
 <footer>
-  <h3 style="color:#d8ad58">❖ मिथिलांचल विवाह मंच ❖</h3>
+
+  <h3 style="color:#d8ad58">
+    ❖ मिथिलांचल विवाह मंच ❖
+  </h3>
+
   <p>मैथिल समाजक अपन वैवाहिक मंच</p>
-  <p>संपर्क: <span class="contact-hidden">XXXXXXXXXX</span></p>
-  <p style="margin-top:12px;font-size:13px">
-    © <span id="year"></span> Mithilanchal Vivah Manch. All Rights Reserved.
+
+  <p>
+    संपर्क:
+    <span class="contact-hidden">XXXXXXXXXX</span>
   </p>
+
+  <p style="margin-top:12px;font-size:13px">
+    © <span id="year"></span>
+    Mithilanchal Vivah Manch. All Rights Reserved.
+  </p>
+
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
 
-document.getElementById("profileForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+// वर्तमान वर्ष
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
-  const person = document.getElementById("person").value;
-  const name = document.getElementById("name").value.trim();
-  const age = document.getElementById("age").value;
-  const education = document.getElementById("education").value.trim();
-  const city = document.getElementById("city").value.trim();
-  const details = document.getElementById("details").value.trim();
+// अलग-अलग पेज खोलने का सिस्टम
+function showPage(pageId, updateHistory = true) {
 
-  const message =
-नमस्कार मिथिलांचल विवाह मंच,
+  const pages = document.querySelectorAll(".page");
+  const navLinks = document.querySelectorAll("nav a[data-page]");
+
+  const selectedPage = document.getElementById(pageId);
+
+  if (!selectedPage) {
+    pageId = "home";
+  }
+
+  pages.forEach(function(page) {
+    page.classList.remove("active");
+  });
+
+  document.getElementById(pageId).classList.add("active");
+
+  navLinks.forEach(function(link) {
+    link.classList.remove("active");
+
+if (link.dataset.page === pageId) {
+      link.classList.add("active");
+    }
+  });
+
+  if (updateHistory) {
+    history.pushState(
+      { page: pageId },
+      "",
+      "#" + pageId
+    );
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+// मेन्यू और पेज लिंक पर क्लिक
+document.querySelectorAll("[data-page]").forEach(function(link) {
+
+  link.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    const pageId = this.dataset.page;
+
+    showPage(pageId);
+
+  });
+
+});
+
+// मोबाइल या ब्राउजर Back बटन
+window.addEventListener("popstate", function() {
+
+  const pageId = location.hash.replace("#", "") || "home";
+
+  showPage(pageId, false);
+
+});
+
+// सीधे किसी पेज के लिंक से आने पर
+window.addEventListener("DOMContentLoaded", function() {
+
+  const pageId = location.hash.replace("#", "") || "home";
+
+  showPage(pageId, false);
+
+});
+
+// WhatsApp Biodata Form
+document.getElementById("profileForm").addEventListener(
+  "submit",
+  function(event) {
+
+    event.preventDefault();
+
+    const person = document.getElementById("person").value;
+    const name = document.getElementById("name").value.trim();
+    const age = document.getElementById("age").value;
+    const education = document.getElementById("education").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const details = document.getElementById("details").value.trim();
+
+    const message = नमस्कार मिथिलांचल विवाह मंच,
 
 हम अपन परिचय भेजय चाहैत छी।
 
@@ -285,12 +745,19 @@ document.getElementById("profileForm").addEventListener("submit", function(event
 निवास स्थान: ${city}
 अन्य जानकारी: ${details};
 
-  const whatsappNumber = "916299735655";
-  const whatsappURL =
-    "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+    const whatsappNumber = "916299735655";
 
-  window.open(whatsappURL, "_blank");
-});
+    const whatsappURL =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+
+  }
+);
+
 </script>
 
 </body>

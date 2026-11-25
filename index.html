@@ -658,6 +658,16 @@ function searchProfiles(){
     "खोज सुविधा शीघ्र शुरू होयत। वास्तविक परिचय खोजबाक लेल डेटाबेस जोड़बाक आवश्यकता अछि।";
 }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script>
+const SUPABASE_URL = "https://gpmmhstcxzldxpmtfwch.supabase.co/rest/v1/";
+const SUPABASE_KEY = "sb_publishable_0eubLnbvXf4qbvvuKTzuCQ_pVrOygad";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+</script>
 </body>
 </html>

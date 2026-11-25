@@ -9,250 +9,120 @@
 
 <style>
 :root{
-  --primary:#7c2452;
-  --secondary:#a94370;
-  --light:#fff6f9;
-  --gold:#d7a64a;
-  --dark:#29202a;
-  --muted:#746b72;
-  --white:#fff;
-  --shadow:0 10px 35px rgba(70,20,45,.10);
+ --primary:#7c2452;--secondary:#a94370;--light:#fff6f9;
+ --gold:#d7a64a;--dark:#29202a;--muted:#746b72;
+ --white:#fff;--shadow:0 10px 35px rgba(70,20,45,.10)
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
-  background:#fff;
-  color:var(--dark);
-  line-height:1.7;
-}
+body{font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;background:#fff;color:var(--dark);line-height:1.7}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer}
+input,select,textarea{font-family:inherit}
 .container{width:min(1160px,92%);margin:auto}
-
-/* Header */
-header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(255,255,255,.96);
-  box-shadow:0 2px 15px rgba(0,0,0,.06);
-  backdrop-filter:blur(12px);
-}
-.nav{
-  min-height:76px;display:flex;align-items:center;
-  justify-content:space-between;gap:20px;
-}
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);box-shadow:0 2px 15px rgba(0,0,0,.06);backdrop-filter:blur(12px)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
 .logo{display:flex;align-items:center;gap:10px}
-.logo-mark{
-  width:46px;height:46px;border-radius:50%;
-  background:var(--primary);color:white;
-  display:grid;place-items:center;font-size:23px;
-}
+.logo-mark{width:46px;height:46px;border-radius:50%;background:var(--primary);color:white;display:grid;place-items:center;font-size:23px}
 .logo h2{font-size:19px;color:var(--primary);line-height:1.3}
 .logo small{font-size:11px;color:var(--muted)}
-.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links{display:flex;align-items:center;gap:20px}
 .nav-links a{font-size:14px;font-weight:600}
 .nav-links a:hover{color:var(--secondary)}
-.nav-btn,.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  background:var(--primary);color:white;
-  padding:11px 22px;border-radius:30px;
-  font-weight:700;border:0;transition:.25s;
-}
+.nav-btn,.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--primary);color:white;padding:11px 22px;border-radius:30px;font-weight:700;border:0;transition:.25s}
 .nav-btn:hover,.btn:hover{background:var(--secondary);transform:translateY(-2px)}
 .menu-btn{display:none;background:none;border:0;font-size:27px;color:var(--primary)}
-
-/* Hero */
-.hero{
-  background:linear-gradient(110deg,#fff5f8 0%,#fff 60%,#f9e9ef 100%);
-  padding:65px 0 75px;overflow:hidden;
-}
-.hero-grid{
-  display:grid;grid-template-columns:1.05fr .95fr;
-  align-items:center;gap:45px;
-}
-.eyebrow{
-  color:var(--secondary);font-weight:800;
-  font-size:14px;letter-spacing:1px;
-}
-.hero h1{
-  font-size:clamp(32px,4.5vw,53px);
-  line-height:1.3;color:var(--primary);
-  margin:15px 0;
-}
+.hero{background:linear-gradient(110deg,#fff5f8 0%,#fff 60%,#f9e9ef 100%);padding:65px 0 75px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px}
+.eyebrow{color:var(--secondary);font-weight:800;font-size:14px;letter-spacing:1px}
+.hero h1{font-size:clamp(32px,4.5vw,53px);line-height:1.3;color:var(--primary);margin:15px 0}
 .hero p{color:var(--muted);font-size:17px;max-width:540px}
 .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
-.btn-outline{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:10px 22px;border:1px solid var(--primary);
-  border-radius:30px;color:var(--primary);font-weight:700;
-}
+.btn-outline{display:inline-flex;align-items:center;justify-content:center;padding:10px 22px;border:1px solid var(--primary);border-radius:30px;color:var(--primary);font-weight:700}
 .hero-image{position:relative}
-.hero-image img{
-  width:100%;height:440px;object-fit:cover;
-  border-radius:150px 18px 150px 18px;
-  box-shadow:var(--shadow);
-}
-.image-note{
-  position:absolute;bottom:20px;left:-20px;
-  background:white;padding:14px 20px;border-radius:14px;
-  box-shadow:var(--shadow);color:var(--primary);font-weight:700;
-}
-
-/* Common */
+.hero-image img{width:100%;height:440px;object-fit:cover;border-radius:150px 18px 150px 18px;box-shadow:var(--shadow)}
+.image-note{position:absolute;bottom:20px;left:-20px;background:white;padding:14px 20px;border-radius:14px;box-shadow:var(--shadow);color:var(--primary);font-weight:700}
 section{padding:75px 0}
 .section-heading{text-align:center;margin-bottom:35px}
 .section-heading span{color:var(--secondary);font-weight:800;font-size:13px}
 .section-heading h2{font-size:31px;color:var(--primary);margin:5px 0}
 .section-heading p{color:var(--muted);font-size:14px}
 .soft{background:var(--light)}
-
-/* Search */
-.search-box{
-  background:white;padding:28px;border-radius:20px;
-  box-shadow:var(--shadow);display:grid;
-  grid-template-columns:repeat(4,1fr);gap:16px;
-}
+.search-box{background:white;padding:28px;border-radius:20px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .field label{display:block;font-weight:700;font-size:13px;margin-bottom:7px}
-.field select,.field input{
-  width:100%;padding:13px;border:1px solid #eadde3;
-  border-radius:10px;background:white;font:inherit;
-  outline:none;color:var(--dark);
-}
-.field select:focus,.field input:focus{border-color:var(--secondary)}
+.field input,.field select,.field textarea{width:100%;padding:13px;border:1px solid #eadde3;border-radius:10px;background:white;font:inherit;outline:none;color:var(--dark)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--secondary)}
 .search-submit{grid-column:1/-1;text-align:center;margin-top:5px}
 .search-submit button{min-width:190px}
-#searchMessage{
-  text-align:center;margin-top:17px;
-  color:var(--primary);font-weight:700;
-}
+#searchMessage,.message{text-align:center;margin-top:15px;color:var(--primary);font-weight:700}
 
-/* Profiles */
-.profile-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
-}
-.profile-card{
-  background:white;border-radius:17px;overflow:hidden;
-  box-shadow:var(--shadow);transition:.25s;
-}
+.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.profile-card{background:white;border-radius:17px;overflow:hidden;box-shadow:var(--shadow);transition:.25s}
 .profile-card:hover{transform:translateY(-5px)}
-.profile-card img{width:100%;height:245px;object-fit:cover}
+.profile-photo{height:190px;background:linear-gradient(135deg,#f8e5ed,#fff6f9);display:grid;place-items:center;font-size:65px;color:var(--primary)}
 .profile-info{padding:19px}
 .profile-info h3{color:var(--primary);font-size:19px}
 .profile-info p{font-size:13px;color:var(--muted);margin:5px 0}
-.profile-tag{
-  display:inline-block;background:#f8e9f0;color:var(--primary);
-  padding:4px 11px;border-radius:20px;font-size:11px;margin-top:8px;
-}
-
-/* Features */
-.feature-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-}
-.feature{
-  background:white;padding:25px;border-radius:16px;
-  box-shadow:var(--shadow);text-align:center;
-}
+.profile-tag{display:inline-block;background:#f8e9f0;color:var(--primary);padding:4px 11px;border-radius:20px;font-size:11px;margin-top:8px}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature{background:white;padding:25px;border-radius:16px;box-shadow:var(--shadow);text-align:center}
 .feature-icon{font-size:34px}
 .feature h3{color:var(--primary);margin:10px 0 5px}
 .feature p{font-size:13px;color:var(--muted)}
-
-/* About */
-.about-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:40px;
-  align-items:center;
-}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .about-grid h2{color:var(--primary);font-size:30px;margin-bottom:15px}
 .about-grid p{color:var(--muted);margin-bottom:12px}
-.about-symbol{
-  min-height:280px;border-radius:25px;
-  background:linear-gradient(135deg,#7c2452,#c06b8e);
-  color:white;display:grid;place-items:center;
-  text-align:center;padding:30px;
-}
+.about-symbol{min-height:280px;border-radius:25px;background:linear-gradient(135deg,#7c2452,#c06b8e);color:white;display:grid;place-items:center;text-align:center;padding:30px}
 .about-symbol strong{font-size:30px;display:block}
-
-/* CTA */
-.cta{
-  background:linear-gradient(120deg,#702044,#a94370);
-  color:white;text-align:center;padding:55px 20px;
-}
+.cta{background:linear-gradient(120deg,#702044,#a94370);color:white;text-align:center;padding:55px 20px}
 .cta h2{font-size:30px;margin-bottom:10px}
 .cta p{opacity:.9;margin-bottom:22px}
 .cta .btn{background:white;color:var(--primary)}
-
-/* Contact and Social */
-.contact-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:30px;
-}
-.contact-card{
-  background:white;padding:28px;border-radius:18px;
-  box-shadow:var(--shadow);
-}
-.contact-card h3{color:var(--primary);margin-bottom:15px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.contact-card,.form-card{background:white;padding:28px;border-radius:18px;box-shadow:var(--shadow)}
+.contact-card h3,.form-card h3{color:var(--primary);margin-bottom:15px}
 .contact-line{margin:12px 0;color:var(--muted);font-size:14px}
-.social-links{
-  display:flex;flex-wrap:wrap;gap:11px;margin-top:17px;
-}
-.social-link{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:10px 15px;border-radius:30px;
-  background:#f8edf2;color:var(--primary);
-  font-size:13px;font-weight:700;
-  transition:.2s;
-}
+.social-links{display:flex;flex-wrap:wrap;gap:11px;margin-top:17px}
+.social-link{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border-radius:30px;background:#f8edf2;color:var(--primary);font-size:13px;font-weight:700;transition:.2s}
 .social-link:hover{background:var(--primary);color:white;transform:translateY(-2px)}
 .whatsapp-link{background:#e8f8ed;color:#137a39}
 .whatsapp-link:hover{background:#168b46;color:white}
-
-/* Footer */
 footer{background:#281923;color:#f8eaf0;padding:45px 0 18px}
-.footer-grid{
-  display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:35px;
-}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:35px}
 footer h3{font-size:19px;margin-bottom:13px;color:white}
 footer p,footer a{font-size:13px;color:#d9c6d0}
 footer a:hover{color:white}
 .footer-links{display:grid;gap:8px}
-.footer-bottom{
-  border-top:1px solid #553b49;margin-top:30px;
-  padding-top:17px;text-align:center;font-size:12px;color:#cbb7c1;
-}
+.footer-bottom{border-top:1px solid #553b49;margin-top:30px;padding-top:17px;text-align:center;font-size:12px;color:#cbb7c1}
 .footer-social{margin-top:15px}
-
-/* Floating WhatsApp */
-.float-wa{
-  position:fixed;right:18px;bottom:20px;z-index:99;
-  background:#20b65a;color:white;border-radius:50px;
-  padding:13px 18px;font-weight:800;
-  box-shadow:0 5px 20px rgba(0,0,0,.2);
-}
-
-/* Responsive */
+.float-wa{position:fixed;right:18px;bottom:20px;z-index:99;background:#20b65a;color:white;border-radius:50px;padding:13px 18px;font-weight:800;box-shadow:0 5px 20px rgba(0,0,0,.2)}
+.auth-status{background:#fff0f5;border:1px solid #f0d5e1;border-radius:12px;padding:14px;margin-bottom:20px;color:var(--primary);font-weight:700}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.form-actions{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+.form-card{max-width:850px;margin:auto}
+.form-card .field{margin-bottom:4px}
+.full{grid-column:1/-1}
+.small-note{font-size:12px;color:var(--muted);margin-top:10px}
+.panel-box{background:white;border-radius:15px;padding:20px;box-shadow:var(--shadow);margin:15px 0}
+.hidden{display:none!important}
+.status-pill{display:inline-block;padding:4px 10px;border-radius:20px;background:#fff0d8;color:#875300;font-size:12px;font-weight:bold}
+button:disabled{opacity:.55;cursor:not-allowed}
 @media(max-width:850px){
-  .nav-links{
-    display:none;position:absolute;top:76px;left:0;width:100%;
-    background:white;padding:20px;box-shadow:var(--shadow);
-    flex-direction:column;align-items:stretch;gap:15px;
-  }
-  .nav-links.show{display:flex}
-  .menu-btn{display:block}
-  .nav-btn{display:none}
-  .hero-grid,.about-grid{grid-template-columns:1fr}
-  .hero-image img{height:350px}
-  .image-note{left:10px}
-  .search-box{grid-template-columns:repeat(2,1fr)}
-  .profile-grid,.feature-grid{grid-template-columns:repeat(2,1fr)}
+
+.nav-links{display:none;position:absolute;top:76px;left:0;width:100%;background:white;padding:20px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:15px}
+ .nav-links.show{display:flex}.menu-btn{display:block}.nav-btn{display:none}
+ .hero-grid,.about-grid{grid-template-columns:1fr}.hero-image img{height:350px}.image-note{left:10px}
+ .search-box{grid-template-columns:repeat(2,1fr)}
+ .profile-grid,.feature-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:560px){
-  section{padding:55px 0}
-  .hero{padding:45px 0}
-  .hero-image img{height:290px;border-radius:80px 12px 80px 12px}
-
-.search-box{grid-template-columns:1fr;padding:20px}
-  .profile-grid,.feature-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
-  .section-heading h2{font-size:26px}
-  .hero p{font-size:15px}
-  .float-wa{right:12px;bottom:12px;padding:11px 15px;font-size:13px}
+ section{padding:55px 0}.hero{padding:45px 0}
+ .hero-image img{height:290px;border-radius:80px 12px 80px 12px}
+ .search-box{grid-template-columns:1fr;padding:20px}
+ .profile-grid,.feature-grid,.contact-grid,.footer-grid,.form-grid{grid-template-columns:1fr}
+ .section-heading h2{font-size:26px}.hero p{font-size:15px}
+ .float-wa{right:12px;bottom:12px;padding:11px 15px;font-size:13px}
+ .full{grid-column:auto}
 }
 </style>
 </head>
@@ -260,414 +130,594 @@ footer a:hover{color:white}
 <body>
 
 <header>
-  <div class="container nav">
-    <a href="#home" class="logo">
-      <div class="logo-mark">❀</div>
-      <div>
-        <h2>मिथिलांचल विवाह मंच</h2>
-        <small>अपन समाज, अपन संस्कार, अपन संबंध</small>
-      </div>
-    </a>
-
-    <nav class="nav-links" id="navLinks">
-      <a href="#home">मुख्य पृष्ठ</a>
-      <a href="#search">वर खोजू</a>
-      <a href="#profiles">परिचय</a>
-      <a href="#about">हमर विषयमे</a>
-      <a href="#contact">संपर्क</a>
-    </nav>
-
-    <a class="nav-btn" href="#search">जीवनसाथी खोजू</a>
-    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
-  </div>
+ <div class="container nav">
+  <a href="#home" class="logo">
+   <div class="logo-mark">❀</div>
+   <div><h2>मिथिलांचल विवाह मंच</h2><small>अपन समाज, अपन संस्कार, अपन संबंध</small></div>
+  </a>
+  <nav class="nav-links" id="navLinks">
+   <a href="#home">मुख्य पृष्ठ</a>
+   <a href="#search">वर खोजू</a>
+   <a href="#profiles">परिचय</a>
+   <a href="#register">रजिस्ट्रेशन</a>
+   <a href="#membership">सदस्यता</a>
+   <a href="#about">हमर विषयमे</a>
+   <a href="#contact">संपर्क</a>
+  </nav>
+  <a class="nav-btn" href="#account">Login / Register</a>
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+ </div>
 </header>
 
 <main>
 
-<!-- Hero -->
+<!-- ORIGINAL HERO -->
 <section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">❤️ मैथिल समाजक अपन वैवाहिक मंच</div>
-      <h1>अहाँक जीवनक सुंदर संबंध एतय शुरू होइत अछि।</h1>
-      <p>
-        अपन समाज, अपन भाषा आ अपन संस्कारक संग
-        योग्य जीवनसाथी खोजबाक एकटा सरल आ विश्वसनीय प्रयास।
-        आब विवाह संबंध बनाउ अपन मैथिल समाजक बीच।
-      </p>
-      <div class="hero-actions">
-        <a class="btn" href="#search">वर-वधू खोजू</a>
-        <a class="btn-outline" href="#about">हमरा सभकेँ जानू</a>
-      </div>
-    </div>
-
-    <div class="hero-image">
-      <img
-        src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=900"
-        alt="विवाह समारोह">
-      <div class="image-note">🌸 अपन समाज, अपन संबंध</div>
-    </div>
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow">❤️ मैथिल समाजक अपन वैवाहिक मंच</div>
+   <h1>अहाँक जीवनक सुंदर संबंध एतय शुरू होइत अछि।</h1>
+   <p>अपन समाज, अपन भाषा आ अपन संस्कारक संग योग्य जीवनसाथी खोजबाक एकटा सरल आ विश्वसनीय प्रयास। आब विवाह संबंध बनाउ अपन मैथिल समाजक बीच।</p>
+   <div class="hero-actions">
+    <a class="btn" href="#search">वर-वधू खोजू</a>
+    <a class="btn-outline" href="#about">हमरा सभकेँ जानू</a>
+   </div>
   </div>
+  <div class="hero-image">
+   <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=900" alt="विवाह समारोह">
+   <div class="image-note">🌸 अपन समाज, अपन संबंध</div>
+  </div>
+ </div>
 </section>
 
-<!-- Search -->
+<!-- ACCOUNT -->
+<section class="soft" id="account">
+ <div class="container">
+  <div class="section-heading">
+   <span>अपन खाता बनाउ</span>
+   <h2>Login / Registration</h2>
+   <p>परिचय देखबाक आ जमा करबाक लेल पहिले खाता में प्रवेश करू।</p>
+  </div>
+
+  <div class="form-card">
+   <div class="auth-status" id="accountStatus">अहाँ एखन Login नहि कएने छी।</div>
+   <div class="form-grid">
+    <div class="field">
+     <label>ईमेल पता</label>
+     <input type="email" id="authEmail" placeholder="अपन Email लिखू">
+    </div>
+    <div class="field">
+     <label>Password</label>
+     <input type="password" id="authPassword" placeholder="कम सँ कम 6 अक्षर">
+    </div>
+   </div>
+   <div class="form-actions">
+    <button class="btn" onclick="signUp()">नवीन Registration</button>
+    <button class="btn" onclick="signIn()">Login करू</button>
+    <button class="btn-outline" onclick="signOut()">Logout</button>
+   </div>
+   <p class="small-note">Registration के बाद Email Confirmation माँगल जा सकैत अछि। अपन Email Inbox सेहो देखू।</p>
+   <div class="message" id="authMessage"></div>
+  </div>
+ </div>
+</section>
+
+<!-- SEARCH -->
 <section class="soft" id="search">
-  <div class="container">
-    <div class="section-heading">
-      <span>अपन जीवनसाथी तक पहुँचू</span>
-      <h2>योग्य वर अथवा कन्या खोजू</h2>
-      <p>अपन पसंद आ आवश्यकता अनुसार जानकारी चुनू।</p>
-    </div>
-
-    <div class="search-box">
-      <div class="field">
-        <label for="gender">की खोजय चाहैत छी?</label>
-        <select id="gender">
-          <option value="">चयन करू</option>
-          <option value="वर">वर</option>
-          <option value="कन्या">कन्या</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="age">उम्र</label>
-        <select id="age">
-          <option value="">उम्र चुनू</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="education">शिक्षा</label>
-        <select id="education">
-          <option value="">सभ शिक्षा</option>
-          <option>मैट्रिक</option>
-          <option>इंटरमीडिएट</option>
-          <option>स्नातक</option>
-          <option>स्नातकोत्तर</option>
-          <option>इंजीनियरिंग</option>
-          <option>चिकित्सा</option>
-          <option>अन्य</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="district">जिला</label>
-        <select id="district">
-          <option value="">सभ जिला</option>
-          <option>दरभंगा</option>
-          <option>मधुबनी</option>
-          <option>समस्तीपुर</option>
-          <option>सहरसा</option>
-          <option>सुपौल</option>
-          <option>मुजफ्फरपुर</option>
-          <option>सीतामढ़ी</option>
-          <option>पटना</option>
-          <option>अन्य</option>
-        </select>
-      </div>
-
-      <div class="search-submit">
-        <button class="btn" onclick="searchProfiles()">🔍 परिचय खोजू</button>
-      </div>
-    </div>
-    <div id="searchMessage"></div>
+ <div class="container">
+  <div class="section-heading">
+   <span>अपन जीवनसाथी तक पहुँचू</span>
+   <h2>योग्य वर अथवा कन्या खोजू</h2>
+   <p>अपन पसंद आ आवश्यकता अनुसार जानकारी चुनू।</p>
   </div>
+  <div class="search-box">
+   <div class="field">
+    <label for="gender">की खोजय चाहैत छी?</label>
+    <select id="gender">
+     <option value="">सभ</option><option value="वर">वर</option><option value="कन्या">कन्या</option>
+
+</select>
+   </div>
+   <div class="field">
+    <label for="age">उम्र</label>
+    <select id="age"><option value="">सभ उम्र</option></select>
+   </div>
+   <div class="field">
+    <label for="education">शिक्षा</label>
+    <select id="education">
+     <option value="">सभ शिक्षा</option><option>मैट्रिक</option><option>इंटरमीडिएट</option>
+     <option>स्नातक</option><option>स्नातकोत्तर</option><option>इंजीनियरिंग</option><option>चिकित्सा</option><option>अन्य</option>
+    </select>
+   </div>
+   <div class="field">
+    <label for="district">जिला / स्थान</label>
+    <select id="district">
+     <option value="">सभ जिला</option><option>दरभंगा</option><option>मधुबनी</option>
+     <option>समस्तीपुर</option><option>सहरसा</option><option>सुपौल</option>
+     <option>मुजफ्फरपुर</option><option>सीतामढ़ी</option><option>पटना</option><option>अन्य</option>
+    </select>
+   </div>
+   <div class="search-submit"><button class="btn" onclick="searchProfiles()">🔍 परिचय खोजू</button></div>
+  </div>
+  <div id="searchMessage"></div>
+ </div>
 </section>
 
-<!-- Profiles -->
+<!-- PROFILES -->
 <section id="profiles">
-  <div class="container">
-    <div class="section-heading">
-      <span>नवीन परिचय</span>
-      <h2>हालक वैवाहिक परिचय</h2>
-      <p>अपन समाजक विवाह योग्य युवक-युवतीक परिचय।</p>
-    </div>
-
-<div class="profile-grid">
-      <article class="profile-card">
-        <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=700" alt="वैवाहिक परिचय">
-        <div class="profile-info">
-          <h3>वर परिचय</h3>
-          <p>शिक्षा : स्नातक</p>
-          <p>स्थान : मिथिलांचल</p>
-          <span class="profile-tag">नवीन परिचय</span>
-        </div>
-      </article>
-
-      <article class="profile-card">
-        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700" alt="वैवाहिक परिचय">
-        <div class="profile-info">
-          <h3>कन्या परिचय</h3>
-          <p>शिक्षा : स्नातकोत्तर</p>
-          <p>स्थान : मिथिलांचल</p>
-          <span class="profile-tag">नवीन परिचय</span>
-        </div>
-      </article>
-
-      <article class="profile-card">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=700" alt="वैवाहिक परिचय">
-        <div class="profile-info">
-          <h3>वर परिचय</h3>
-          <p>शिक्षा : इंजीनियरिंग</p>
-          <p>स्थान : बिहार</p>
-          <span class="profile-tag">नवीन परिचय</span>
-        </div>
-      </article>
-    </div>
+ <div class="container">
+  <div class="section-heading">
+   <span>नवीन परिचय</span>
+   <h2>हालक वैवाहिक परिचय</h2>
+   <p>अपन समाजक विवाह योग्य युवक-युवतीक परिचय।</p>
   </div>
+  <div class="profile-grid" id="profileResults">
+   <div class="panel-box full">परिचय देखबाक लेल Login करू आ Search बटन दबाउ।</div>
+  </div>
+ </div>
 </section>
 
-<!-- Features -->
+<!-- BIODATA FORM -->
+<section class="soft" id="register">
+ <div class="container">
+  <div class="section-heading">
+   <span>अपन परिचय जमा करू</span>
+   <h2>वैवाहिक Biodata Form</h2>
+   <p>अपन सही जानकारी भरू। परिचय जमा करबाक लेल Login आवश्यक अछि।</p>
+  </div>
+  <div class="form-card">
+   <div class="form-grid">
+    <div class="field"><label>पूरा नाम</label><input id="bioName" placeholder="पूरा नाम"></div>
+    <div class="field"><label>परिचय</label>
+     <select id="bioType"><option value="">चयन करू</option><option value="वर">वर</option><option value="कन्या">कन्या</option></select>
+    </div>
+    <div class="field"><label>उम्र</label><input id="bioAge" type="number" min="18" max="100" placeholder="उम्र"></div>
+    <div class="field"><label>वैवाहिक स्थिति</label>
+     <select id="bioMarital"><option value="">चयन करू</option><option>अविवाहित</option><option>तलाकशुदा</option><option>विधवा / विधुर</option></select>
+    </div>
+    <div class="field"><label>ऊँचाई</label><input id="bioHeight" placeholder="जैसे 5 फीट 6 इंच"></div>
+    <div class="field"><label>जाति</label><input id="bioCaste" placeholder="जाति"></div>
+    <div class="field"><label>गोत्र</label><input id="bioGotra" placeholder="गोत्र"></div>
+    <div class="field"><label>शिक्षा</label><input id="bioEducation" placeholder="शिक्षा"></div>
+    <div class="field"><label>पेशा</label><input id="bioProfession" placeholder="पेशा"></div>
+    <div class="field"><label>वार्षिक आय</label><input id="bioIncome" placeholder="वार्षिक आय"></div>
+    <div class="field"><label>पिताक नाम</label><input id="bioFather" placeholder="पिताक नाम"></div>
+    <div class="field"><label>माताक नाम</label><input id="bioMother" placeholder="माताक नाम"></div>
+    <div class="field"><label>भाई-बहिनक विवरण</label><input id="bioSiblings" placeholder="भाई-बहिनक विवरण"></div>
+    <div class="field"><label>मूल स्थान / गाँव</label><input id="bioNative" placeholder="गाँव / जिला"></div>
+    <div class="field"><label>वर्तमान शहर</label><input id="bioCity" placeholder="वर्तमान शहर"></div>
+    <div class="field full"><label>अपन बारे में अतिरिक्त जानकारी</label><textarea id="bioDescription" rows="4" placeholder="परिवार आ अपन परिचय..."></textarea></div>
+   </div>
+   <div class="form-actions"><button class="btn" onclick="submitBiodata()">Biodata जमा करू</button></div>
+   <p class="small-note">कृपया सही जानकारी भरू। निजी मोबाइल नंबर आ फोटो एहि सार्वजनिक परिचय फॉर्म में नहि देखाओल जायत।</p>
+   <div class="message" id="bioMessage"></div>
+  </div>
+ </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section id="membership">
+ <div class="container">
+  <div class="section-heading">
+   <span>विशेष सदस्यता</span>
+   <h2>Paid Membership</h2>
+   <p>सक्रिय सदस्यता पर निजी संपर्क जानकारी देखबाक सुविधा।</p>
+  </div>
+  <div class="form-card">
+   <div class="panel-box">
+    <h3 style="color:var(--primary)">🌸 सदस्यता सुविधा</h3>
+    <p>सक्रिय Paid Membership पर उपलब्ध निजी विवरण देखबाक सुविधा। सदस्यता अवधि 365 दिन राखल जाएत।</p>
+    <p style="margin-top:10px">सदस्यता स्थिति: <strong id="membershipStatus">Login के बाद देखाओल जाएत</strong></p>
+   </div>
+   <div class="form-grid">
+    <div class="field"><label>सदस्यता राशि (₹)</label><input id="paymentAmount" type="number" min="1" placeholder="निर्धारित राशि लिखू"></div>
+    <div class="field"><label>UPI Transaction ID</label><input id="transactionId" placeholder="Payment Transaction ID"></div>
+   </div>
+   <div class="form-actions"><button class="btn" onclick="submitPayment()">Payment Request भेजू</button></div>
+   <p class="small-note">पहिने मंच द्वारा बताओल भुगतान माध्यम सँ भुगतान करू। Transaction ID जमा कयलाक बाद Admin जाँच करताह। एहि फॉर्म सँ भुगतान अपने-आप सत्यापित नहि होइत अछि।</p>
+   <div class="message" id="paymentMessage"></div>
+  </div>
+ </div>
+</section>
+
+<!-- ADMIN -->
+<section class="soft hidden" id="adminPanel">
+ <div class="container">
+  <div class="section-heading">
+   <span>केवल Admin लेल</span>
+   <h2>Admin Panel</h2>
+   <p>आयल Payment Request देखू।</p>
+  </div>
+  <div class="form-card">
+   <button class="btn" onclick="loadPayments()">Payment Requests देखू</button>
+   <div id="adminPayments" class="panel-box">Admin Login के बाद Request देख सकैत छी।</div>
+   <p class="small-note">Payment सत्यापन आ Membership सक्रिय करबाक सुरक्षित प्रक्रिया फिलहाल Supabase Dashboard सँ करबाक अछि।</p>
+  </div>
+ </div>
+</section>
+
+<!-- ORIGINAL FEATURES -->
 <section class="soft">
-  <div class="container">
-    <div class="section-heading">
-      <span>हमर विशेषता</span>
-      <h2>अहाँ लेल हमर प्रयास</h2>
-      <p>मैथिल समाजक वैवाहिक संबंधकेँ सरल बनेबाक प्रयास।</p>
-    </div>
-
-    <div class="feature-grid">
-      <div class="feature">
-        <div class="feature-icon">💍</div>
-        <h3>योग्य जीवनसाथी</h3>
-        <p>अपन समाजक योग्य वर आ कन्याक परिचय एकठाम।</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">🤝</div>
-        <h3>समाजक जुड़ाव</h3>
-        <p>मैथिल परिवार सभकेँ एक-दोसरासँ जोड़बाक प्रयास।</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">📱</div>
-        <h3>सरल संपर्क</h3>
-        <p>वैवाहिक संबंधक लेल परिवार सभसँ सीधा संपर्क।</p>
-      </div>
-    </div>
+ <div class="container">
+  <div class="section-heading">
+   <span>हमर विशेषता</span><h2>अहाँ लेल हमर प्रयास</h2>
+   <p>मैथिल समाजक वैवाहिक संबंधकेँ सरल बनेबाक प्रयास।</p>
   </div>
+  <div class="feature-grid">
+   <div class="feature"><div class="feature-icon">💍</div><h3>योग्य जीवनसाथी</h3><p>अपन समाजक योग्य वर आ कन्याक परिचय एकठाम।</p></div>
+   <div class="feature"><div class="feature-icon">🤝</div><h3>समाजक जुड़ाव</h3><p>मैथिल परिवार सभकेँ एक-दोसरासँ जोड़बाक प्रयास।</p></div>
+   <div class="feature"><div class="feature-icon">📱</div><h3>सरल संपर्क</h3><p>वैवाहिक संबंधक लेल परिवार सभसँ सीधा संपर्क।</p></div>
+  </div>
+ </div>
 </section>
 
-<!-- About -->
+<!-- ORIGINAL ABOUT -->
 <section id="about">
-  <div class="container about-grid">
-    <div>
-      <h2>मिथिलांचल विवाह मंच</h2>
-      <p>
-        मिथिलांचल विवाह मंच मैथिल समाजक लेल बनाओल गेल एकटा
-        वैवाहिक पहल अछि। एकर उद्देश्य मैथिल परिवार सभकेँ
-        विवाह योग्य वर-वधूक परिचय उपलब्ध करेनाइ आ
-        वैवाहिक संबंध स्थापित करबाक प्रक्रिया सरल बनौनाइ अछि।
-      </p>
-      <p>
-        हमर प्रयास अछि जे अपन भाषा, संस्कृति आ परंपराक
-        सम्मान करैत समाजक लोक सभ एक-दोसरासँ जुड़थि।
-      </p>
-      <a href="#contact" class="btn">हमरा सभसँ जुड़ू</a>
-    </div>
-
-    <div class="about-symbol">
-      <div>
-        <div style="font-size:55px">🌺</div>
-        <strong>मिथिलांचल विवाह मंच</strong>
-        <p>अपन समाज, अपन संस्कार, अपन संबंध</p>
-      </div>
-    </div>
+ <div class="container about-grid">
+  <div>
+   <h2>मिथिलांचल विवाह मंच</h2>
+   <p>मिथिलांचल विवाह मंच मैथिल समाजक लेल बनाओल गेल एकटा वैवाहिक पहल अछि। एकर उद्देश्य मैथिल परिवार सभकेँ विवाह योग्य वर-वधूक परिचय उपलब्ध करेनाइ आ वैवाहिक संबंध स्थापित करबाक प्रक्रिया सरल बनौनाइ अछि।</p>
+   <p>हमर प्रयास अछि जे अपन भाषा, संस्कृति आ परंपराक सम्मान करैत समाजक लोक सभ एक-दोसरासँ जुड़थि।</p>
+   <a href="#contact" class="btn">हमरा सभसँ जुड़ू</a>
   </div>
+  <div class="about-symbol">
+   <div><div style="font-size:55px">🌺</div><strong>मिथिलांचल विवाह मंच</strong><p>अपन समाज, अपन संस्कार, अपन संबंध</p></div>
+  </div>
+ </div>
 </section>
 
-<!-- CTA -->
+<!-- ORIGINAL CTA -->
 <section class="cta">
-  <div class="container">
-    <h2>अहाँ सेहो अपन समाजसँ जुड़ू।</h2>
-    <p>मैथिल समाजक वैवाहिक संबंधक एहि प्रयासक हिस्सा बनू।</p>
-    <a class="btn" href="https://wa.me/916299735655" target="_blank" rel="noopener noreferrer">
-      WhatsApp पर संपर्क करू
-    </a>
-  </div>
+ <div class="container">
+  <h2>अहाँ सेहो अपन समाजसँ जुड़ू।</h2>
+  <p>मैथिल समाजक वैवाहिक संबंधक एहि प्रयासक हिस्सा बनू।</p>
+  <a class="btn" href="https://wa.me/916299735655" target="_blank" rel="noopener noreferrer">WhatsApp पर संपर्क करू</a>
+ </div>
 </section>
 
-<!-- Contact and Social Media -->
+<!-- ORIGINAL CONTACT -->
 <section id="contact" class="soft">
-  <div class="container">
-    <div class="section-heading">
-      <span>हमरासँ जुड़ू</span>
-      <h2>संपर्क आ सोशल मीडिया</h2>
-      <p>सोशल मीडिया पर मिथिलांचल विवाह मंचसँ जुड़ल रहू।</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>📞 संपर्क करू</h3>
-        <div class="contact-line">
-          <strong>WhatsApp:</strong>
-          <a href="https://wa.me/916299735655" target="_blank" rel="noopener noreferrer">
-            +91 62997 35655
-          </a>
-        </div>
-        <div class="contact-line">
-          <strong>Facebook Page:</strong>
-          मिथिलांचल विवाह मंच
-        </div>
-        <div class="contact-line">
-
-<strong>Instagram:</strong>
-          @mithilanchalvivahmanch
-        </div>
-        <a class="social-link whatsapp-link"
-           href="https://wa.me/916299735655"
-           target="_blank" rel="noopener noreferrer">
-          💬 WhatsApp पर संदेश पठाउ
-        </a>
-      </div>
-
-      <div class="contact-card">
-        <h3>🌐 हमर सोशल मीडिया</h3>
-        <p style="color:var(--muted);font-size:14px">
-          नीचा देल गेल लिंक पर क्लिक क' हमरा सभसँ जुड़ू।
-        </p>
-
-        <div class="social-links">
-          <a class="social-link"
-             href="https://www.facebook.com/profile.php?id=61588338102063"
-             target="_blank" rel="noopener noreferrer">
-            📘 Facebook Page
-          </a>
-
-          <a class="social-link"
-             href="https://www.facebook.com/omMishraYo"
-             target="_blank" rel="noopener noreferrer">
-            👤 Personal Facebook
-          </a>
-
-          <a class="social-link"
-             href="https://www.instagram.com/mithilanchalvivahmanch/"
-             target="_blank" rel="noopener noreferrer">
-            📸 Instagram
-          </a>
-
-          <a class="social-link whatsapp-link"
-             href="https://wa.me/916299735655"
-             target="_blank" rel="noopener noreferrer">
-            💬 WhatsApp Contact
-          </a>
-        </div>
-      </div>
-    </div>
+ <div class="container">
+  <div class="section-heading">
+   <span>हमरासँ जुड़ू</span><h2>संपर्क आ सोशल मीडिया</h2>
+   <p>सोशल मीडिया पर मिथिलांचल विवाह मंचसँ जुड़ल रहू।</p>
   </div>
+  <div class="contact-grid">
+   <div class="contact-card">
+
+<h3>📞 संपर्क करू</h3>
+    <div class="contact-line"><strong>WhatsApp:</strong> <a href="https://wa.me/916299735655" target="_blank">+91 62997 35655</a></div>
+    <div class="contact-line"><strong>Facebook Page:</strong> मिथिलांचल विवाह मंच</div>
+    <div class="contact-line"><strong>Instagram:</strong> @mithilanchalvivahmanch</div>
+    <a class="social-link whatsapp-link" href="https://wa.me/916299735655" target="_blank">💬 WhatsApp पर संदेश पठाउ</a>
+   </div>
+   <div class="contact-card">
+    <h3>🌐 हमर सोशल मीडिया</h3>
+    <p style="color:var(--muted);font-size:14px">नीचा देल गेल लिंक पर क्लिक क' हमरा सभसँ जुड़ू।</p>
+    <div class="social-links">
+     <a class="social-link" href="https://www.facebook.com/profile.php?id=61588338102063" target="_blank">📘 Facebook Page</a>
+     <a class="social-link" href="https://www.facebook.com/omMishraYo" target="_blank">👤 Personal Facebook</a>
+     <a class="social-link" href="https://www.instagram.com/mithilanchalvivahmanch/" target="_blank">📸 Instagram</a>
+     <a class="social-link whatsapp-link" href="https://wa.me/916299735655" target="_blank">💬 WhatsApp Contact</a>
+    </div>
+   </div>
+  </div>
+ </div>
 </section>
 
 </main>
 
-<!-- Footer -->
+<!-- ORIGINAL FOOTER -->
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-
-      <div>
-        <h3>मिथिलांचल विवाह मंच</h3>
-        <p>
-          अपन समाज, अपन संस्कार, अपन संबंध।
-          मैथिल समाजक वैवाहिक जुड़ाव लेल एकटा अपन प्रयास।
-        </p>
-        <div class="social-links footer-social">
-          <a class="social-link"
-             href="https://www.facebook.com/profile.php?id=61588338102063"
-             target="_blank" rel="noopener noreferrer">📘 Facebook</a>
-          <a class="social-link"
-             href="https://www.instagram.com/mithilanchalvivahmanch/"
-             target="_blank" rel="noopener noreferrer">📸 Instagram</a>
-        </div>
-      </div>
-
-      <div>
-        <h3>महत्वपूर्ण लिंक</h3>
-        <div class="footer-links">
-          <a href="#home">मुख्य पृष्ठ</a>
-          <a href="#search">वर-वधू खोजू</a>
-          <a href="#profiles">वैवाहिक परिचय</a>
-          <a href="#about">हमर विषयमे</a>
-          <a href="#contact">संपर्क</a>
-        </div>
-      </div>
-
-      <div>
-        <h3>हमरा सभसँ जुड़ू</h3>
-        <div class="footer-links">
-          <a href="https://www.facebook.com/profile.php?id=61588338102063"
-             target="_blank" rel="noopener noreferrer">Facebook Page</a>
-          <a href="https://www.facebook.com/omMishraYo"
-             target="_blank" rel="noopener noreferrer">Personal Facebook</a>
-          <a href="https://www.instagram.com/mithilanchalvivahmanch/"
-             target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://wa.me/916299735655"
-             target="_blank" rel="noopener noreferrer">WhatsApp Contact</a>
-        </div>
-      </div>
-
+ <div class="container">
+  <div class="footer-grid">
+   <div>
+    <h3>मिथिलांचल विवाह मंच</h3>
+    <p>अपन समाज, अपन संस्कार, अपन संबंध। मैथिल समाजक वैवाहिक जुड़ाव लेल एकटा अपन प्रयास।</p>
+    <div class="social-links footer-social">
+     <a class="social-link" href="https://www.facebook.com/profile.php?id=61588338102063" target="_blank">📘 Facebook</a>
+     <a class="social-link" href="https://www.instagram.com/mithilanchalvivahmanch/" target="_blank">📸 Instagram</a>
     </div>
-
-    <div class="footer-bottom">
-      © 2026 मिथिलांचल विवाह मंच। सर्वाधिकार सुरक्षित।
-      <br>
-      अपन समाज, अपन संस्कार, अपन संबंध। ❤️
+   </div>
+   <div>
+    <h3>महत्वपूर्ण लिंक</h3>
+    <div class="footer-links">
+     <a href="#home">मुख्य पृष्ठ</a><a href="#search">वर-वधू खोजू</a>
+     <a href="#profiles">वैवाहिक परिचय</a><a href="#about">हमर विषयमे</a><a href="#contact">संपर्क</a>
     </div>
+   </div>
+   <div>
+    <h3>हमरा सभसँ जुड़ू</h3>
+    <div class="footer-links">
+     <a href="https://www.facebook.com/profile.php?id=61588338102063" target="_blank">Facebook Page</a>
+     <a href="https://www.facebook.com/omMishraYo" target="_blank">Personal Facebook</a>
+     <a href="https://www.instagram.com/mithilanchalvivahmanch/" target="_blank">Instagram</a>
+     <a href="https://wa.me/916299735655" target="_blank">WhatsApp Contact</a>
+    </div>
+   </div>
   </div>
+  <div class="footer-bottom">© 2026 मिथिलांचल विवाह मंच। सर्वाधिकार सुरक्षित।<br>अपन समाज, अपन संस्कार, अपन संबंध। ❤️</div>
+ </div>
 </footer>
 
-<a class="float-wa"
-   href="https://wa.me/916299735655"
-   target="_blank" rel="noopener noreferrer">
-  💬 WhatsApp
-</a>
+<a class="float-wa" href="https://wa.me/916299735655" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+/* Supabase connection */
+const SUPABASE_URL = "https://gpmmhstcxzldxpmtfwch.supabase.co";
+const SUPABASE_KEY = "sb_publishable_0eubLnbvXf4qbvvuKTzuCQ_pVrOygad";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+let currentUser = null;
+let isAdmin = false;
+
 /* Mobile menu */
 function toggleMenu(){
-  document.getElementById("navLinks").classList.toggle("show");
+ document.getElementById("navLinks").classList.toggle("show");
 }
-
 document.querySelectorAll(".nav-links a").forEach(link=>{
-  link.addEventListener("click",()=>{
-    document.getElementById("navLinks").classList.remove("show");
-  });
+ link.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("show"));
 });
 
-/* Age dropdown: 18 to 60 */
+/* Age dropdown */
 const ageSelect=document.getElementById("age");
 for(let age=18;age<=60;age++){
-  const option=document.createElement("option");
-  option.value=age;
-  option.textContent=age+" वर्ष";
-  ageSelect.appendChild(option);
+ const option=document.createElement("option");
+ option.value=age;option.textContent=age+" वर्ष";
+ ageSelect.appendChild(option);
 }
 
-/* Search form demonstration */
-function searchProfiles(){
-  const gender=document.getElementById("gender").value;
-  const age=document.getElementById("age").value;
-  const education=document.getElementById("education").value;
-  const district=document.getElementById("district").value;
+/* Safe text for HTML */
+function safe(value){
+ return String(value ?? "").replace(/[&<>"']/g,char=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+ }[char]));
+}
+function showMessage(id,message,isError=false){
+ const el=document.getElementById(id);
+ el.textContent=message;
+ el.style.color=isError?"#b00020":"var(--primary)";
+}
+  
+/* Check current session */
+async function refreshSession(){
+ const {data,error}=await supabaseClient.auth.getSession();
+ if(error){console.error(error);return}
+ currentUser=data.session?.user||null;
+ await updateAccountUI();
+}
+async function updateAccountUI(){
+ const status=document.getElementById("accountStatus");
+ if(!currentUser){
+  status.textContent="अहाँ एखन Login नहि कएने छी।";
+  document.getElementById("membershipStatus").textContent="Login आवश्यक";
+  document.getElementById("adminPanel").classList.add("hidden");
+  isAdmin=false;
+  return;
+ }
+ status.textContent="Login भेल अछि: "+currentUser.email;
+ await checkMembership();
+ await checkAdmin();
+}
+async function checkAdmin(){
+ if(!currentUser)return;
+ const {data,error}=await supabaseClient.from("admins").select("id").eq("id",currentUser.id).maybeSingle();
+ isAdmin=!error&&!!data;
+ document.getElementById("adminPanel").classList.toggle("hidden",!isAdmin);
+}
 
-  const message=document.getElementById("searchMessage");
-
-  if(!gender && !age && !education && !district){
-    message.textContent="कृपया खोजबाक लेल कम सँ कम एकटा विकल्प चुनू।";
-    return;
+/* Sign up */
+async function signUp(){
+ const email=document.getElementById("authEmail").value.trim();
+ const password=document.getElementById("authPassword").value;
+ if(!email||password.length<6){
+  showMessage("authMessage","सही Email आ कम सँ कम 6 अक्षरक Password लिखू।",true);return;
+ }
+ showMessage("authMessage","Registration भ' रहल अछि...");
+ const {data,error}=await supabaseClient.auth.signUp({email,password});
+ if(error){showMessage("authMessage",error.message,true);return}
+ if(data.user){
+  if(data.session){
+   currentUser=data.user;
+   const {error:profileError}=await supabaseClient.from("profiles").upsert({id:data.user.id,full_name:email.split("@")[0]},{onConflict:"id"});
+   if(profileError)console.error(profileError);
+   await updateAccountUI();
+   showMessage("authMessage","Registration सफल। आब अहाँ Login छी।");
+  }else{
+   showMessage("authMessage","Registration सफल। Email Confirmation लिंक पर क्लिक करू, फेर Login करू।");
   }
-
-  message.textContent=
-    "खोज सुविधा शीघ्र शुरू होयत। वास्तविक परिचय खोजबाक लेल डेटाबेस जोड़बाक आवश्यकता अछि।";
+ }
 }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script>
-const SUPABASE_URL = "https://gpmmhstcxzldxpmtfwch.supabase.co/rest/v1/";
-const SUPABASE_KEY = "sb_publishable_0eubLnbvXf4qbvvuKTzuCQ_pVrOygad";
+/* Login */
+async function signIn(){
+ const email=document.getElementById("authEmail").value.trim();
+ const password=document.getElementById("authPassword").value;
+ if(!email||!password){showMessage("authMessage","Email आ Password लिखू।",true);return}
+ showMessage("authMessage","Login भ' रहल अछि...");
+ const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+ if(error){showMessage("authMessage",error.message,true);return}
+ currentUser=data.user;
+ await updateAccountUI();
+ showMessage("authMessage","सफलतापूर्वक Login भ' गेल।");
+}
 
-const supabaseClient = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
+/* Logout */
+async function signOut(){
+ const {error}=await supabaseClient.auth.signOut();
+ if(error){showMessage("authMessage",error.message,true);return}
+ currentUser=null;isAdmin=false;
+ await updateAccountUI();
+ showMessage("authMessage","Logout भ' गेल।");
+ document.getElementById("profileResults").innerHTML='<div class="panel-box">परिचय देखबाक लेल Login करू।</div>';
+}
+
+/* Listen for login state changes */
+supabaseClient.auth.onAuthStateChange(async (_event,session)=>{
+ currentUser=session?.user||null;
+ await updateAccountUI();
+});
+
+/* Save biodata */
+async function submitBiodata(){
+ if(!currentUser){showMessage("bioMessage","पहिने Login करू।",true);location.hash="#account";return}
+ const fullName=document.getElementById("bioName").value.trim();
+ const profileType=document.getElementById("bioType").value;
+ const age=Number(document.getElementById("bioAge").value);
+ if(!fullName!profileType!age||age<18){
+  showMessage("bioMessage","नाम, परिचय आ 18 वर्ष या अधिक उम्र भरू।",true);return;
+ }
+ const profile={
+  user_id:currentUser.id,
+  profile_type:profileType,
+  age:age,
+  marital_status:document.getElementById("bioMarital").value||null,
+  height:document.getElementById("bioHeight").value.trim()||null,
+  caste:document.getElementById("bioCaste").value.trim()||null,
+  gotra:document.getElementById("bioGotra").value.trim()||null,
+
+education:document.getElementById("bioEducation").value.trim()||null,
+  profession:document.getElementById("bioProfession").value.trim()||null,
+  annual_income:document.getElementById("bioIncome").value.trim()||null,
+  father_name:document.getElementById("bioFather").value.trim()||null,
+  mother_name:document.getElementById("bioMother").value.trim()||null,
+  siblings:document.getElementById("bioSiblings").value.trim()||null,
+  native_place:document.getElementById("bioNative").value.trim()||null,
+  current_city:document.getElementById("bioCity").value.trim()||null,
+  description:document.getElementById("bioDescription").value.trim()||null
+ };
+ showMessage("bioMessage","Biodata जमा भ' रहल अछि...");
+ const {error}=await supabaseClient.from("biodata").insert(profile);
+ if(error){
+  showMessage("bioMessage","जमा नहि भेल: "+error.message,true);return;
+ }
+ await supabaseClient.from("profiles").upsert({
+  id:currentUser.id,full_name:fullName
+ },{onConflict:"id"});
+ showMessage("bioMessage","अहाँक Biodata सफलतापूर्वक जमा भ' गेल।");
+}
+
+/* Search biodata */
+async function searchProfiles(){
+ if(!currentUser){
+  showMessage("searchMessage","परिचय खोजबाक लेल पहिले Login करू।",true);
+  location.hash="#account";return;
+ }
+ const gender=document.getElementById("gender").value;
+ const age=document.getElementById("age").value;
+ const education=document.getElementById("education").value;
+ const district=document.getElementById("district").value;
+ let query=supabaseClient.from("biodata").select(
+  id,user_id,profile_type,age,height,caste,gotra,education,profession,
+  native_place,current_city,created_at,profiles(full_name)
+ ).order("created_at",{ascending:false}).limit(50);
+ if(gender)query=query.eq("profile_type",gender);
+ if(age)query=query.eq("age",Number(age));
+ if(education)query=query.ilike("education","%"+education+"%");
+ if(district)query=query.or("native_place.ilike.%"+district+"%,current_city.ilike.%"+district+"%");
+ showMessage("searchMessage","परिचय खोजल जा रहल अछि...");
+ const {data,error}=await query;
+ if(error){
+  showMessage("searchMessage","Search में समस्या: "+error.message,true);return;
+ }
+ const results=document.getElementById("profileResults");
+ if(!data||data.length===0){
+  results.innerHTML='<div class="panel-box">एहि जानकारी अनुसार कोनो परिचय नहि भेटल।</div>';
+  showMessage("searchMessage","कोनो परिचय नहि भेटल।");return;
+ }
+ results.innerHTML=data.map(item=>{
+  const name=item.profiles?.full_name||"मैथिल परिवार";
+  return 
+   <article class="profile-card">
+    <div class="profile-photo">🌸</div>
+    <div class="profile-info">
+     <h3>${safe(name)}</h3>
+     <p>परिचय : ${safe(item.profile_type||"")}</p>
+     <p>उम्र : ${safe(item.age||"")}</p>
+     <p>शिक्षा : ${safe(item.education||"जानकारी उपलब्ध नहि")}</p>
+     <p>स्थान : ${safe(item.native_place||item.current_city||"मिथिलांचल")}</p>
+     <p>पेशा : ${safe(item.profession||"जानकारी उपलब्ध नहि")}</p>
+     <span class="profile-tag">नवीन परिचय</span>
+     <p style="margin-top:12px"><strong>निजी संपर्क विवरण सदस्यता पर उपलब्ध।</strong></p>
+     <button class="btn" style="margin-top:10px" onclick="showPrivateNotice()">विस्तृत परिचय</button>
+    </div>
+   </article>;
+ }).join("");
+ showMessage("searchMessage",data.length+" परिचय भेटल।");
+}
+function showPrivateNotice(){
+ if(!currentUser){alert("पहिने Login करू।");return}
+ alert("निजी मोबाइल नंबर आ फोटो केवल सक्रिय Paid Membership पर उपलब्ध होयत।");
+}
+
+/* Check membership */
+async function checkMembership(){
+ if(!currentUser)return;
+ const {data,error}=await supabaseClient.from("memberships")
+  .select("payment_status,end_date")
+  .eq("user_id",currentUser.id)
+  .eq("payment_status","paid")
+  .gt("end_date",new Date().toISOString())
+  .order("end_date",{ascending:false})
+  .limit(1);
+ if(error){
+  document.getElementById("membershipStatus").textContent="स्थिति जाँच नहि भ' सकल";
+return;
+ }
+ if(data&&data.length){
+  document.getElementById("membershipStatus").textContent="सक्रिय — समाप्ति: "+new Date(data[0].end_date).toLocaleDateString("en-IN");
+ }else{
+  document.getElementById("membershipStatus").textContent="अखन सक्रिय सदस्यता नहि अछि";
+ }
+}
+
+/* Submit payment request */
+async function submitPayment(){
+ if(!currentUser){showMessage("paymentMessage","पहिने Login करू।",true);location.hash="#account";return}
+ const amount=Number(document.getElementById("paymentAmount").value);
+ const transactionId=document.getElementById("transactionId").value.trim();
+ if(!amountamount<=0!transactionId){
+  showMessage("paymentMessage","राशि आ Transaction ID दुनू भरू।",true);return;
+ }
+ const {error}=await supabaseClient.from("payment_requests").insert({
+  user_id:currentUser.id,
+  amount:amount,
+  transaction_id:transactionId,
+  status:"pending"
+ });
+ if(error){
+  showMessage("paymentMessage","Request जमा नहि भेल: "+error.message,true);return;
+ }
+ showMessage("paymentMessage","Payment Request जमा भ' गेल। Admin जाँच करताह।");
+ document.getElementById("transactionId").value="";
+}
+
+/* Admin payment request list */
+async function loadPayments(){
+ if(!currentUser||!isAdmin){
+  showMessage("adminPayments","Admin अनुमति आवश्यक अछि।",true);return;
+ }
+ const {data,error}=await supabaseClient.from("payment_requests")
+  .select("id,user_id,amount,transaction_id,status,created_at")
+  .order("created_at",{ascending:false}).limit(100);
+ const panel=document.getElementById("adminPayments");
+ if(error){panel.textContent="Request लोड नहि भेल: "+error.message;return}
+ if(!data||data.length===0){panel.textContent="एखन कोनो Payment Request नहि अछि।";return}
+ panel.innerHTML=data.map(p=>
+  <div class="panel-box">
+   <strong>Payment Request</strong>
+   <p>User ID: ${safe(p.user_id)}</p>
+   <p>राशि: ₹${safe(p.amount)}</p>
+   <p>Transaction ID: ${safe(p.transaction_id)}</p>
+   <p>Status: <span class="status-pill">${safe(p.status)}</span></p>
+   <p>तिथि: ${new Date(p.created_at).toLocaleString("en-IN")}</p>
+  </div>).join("");
+}
+
+/* Initial page load */
+refreshSession();
 </script>
+
 </body>
 </html>

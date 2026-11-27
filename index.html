@@ -76,15 +76,107 @@ footer{background:#2c1822;color:#f7e9df;padding:48px 0 20px}.footgrid{display:gr
 <div class="field"><label>अधिकतम उम्र</label><input id="sMaxAge" type="number" min="18" placeholder="जैसे 32"></div>
 <div class="field"><label>जिला</label><select id="sDistrict"><option value="">सभ जिला</option><option>मधुबनी</option><option>दरभंगा</option><option>समस्तीपुर</option><option>सहरसा</option><option>सुपौल</option><option>मुजफ्फरपुर</option><option>सीतामढ़ी</option><option>पटना</option><option>अन्य</option></select></div>
 <div class="field"><label>गोत्र</label><input id="sGotra" placeholder="गोत्र लिखू"></div>
-<div class="field"><label>शिक्षा</label><select id="sEducation"><option value="">सभ शिक्षा</option><option>मैट्रिक</option><option>इंटरमीडिएट</option><option>स्नातक</option><option>स्नातकोत्तर</option><option>इंजीनियरिंग</option><option>चिकित्सा</option><option>अन्य</option></select></div>
-<div class="field"><label>नौकरीक प्रकार</label><select id="sJobType"><option value="">सभ प्रकार</option><option value="सरकारी">सरकारी नौकरी</option><option value="निजी">निजी नौकरी</option><option value="व्यवसाय">व्यवसाय</option><option value="स्वरोजगार">स्वरोजगार</option><option value="अन्य">अन्य</option></select></div><div class="field"><label>समुदाय</label><select id="sCommunity"><option value="">सभ समुदाय</option><option>ब्राह्मण</option><option>राजपूत</option><option>भूमिहार</option><option>कायस्थ</option></select></div>
-<div class="field"><label>वैवाहिक स्थिति</label><select id="sMarital"><option value="">सभ</option><option>अविवाहित</option><option>तलाकशुदा</option><option>विधवा / विधुर</option></select></div>
-</div><div class="search-actions"><button class="btn" onclick="searchProfiles()">🔎 परिचय खोजू</button><button class="btn light" onclick="clearSearch()">Reset</button></div><div class="msg" id="searchMsg"></div></div></div></section>
-<section id="profiles"><div class="wrap"><div class="section-head"><div class="kicker">RECENTLY APPROVED</div><h2>नवीन स्वीकृत परिचय</h2><p>एतय केवल Admin द्वारा स्वीकृत सार्वजनिक जानकारी देखाओल जाएत।</p></div><div class="profiles" id="profileList"><div class="empty">नवीन परिचय लोड भ' रहल अछि…</div></div></div></section>
-<section class="soft"><div class="wrap"><div class="section-head"><div class="kicker">हमर मंचक विशेषता</div><h2>भरोसा, मर्यादा आ निजता</h2><p>वैवाहिक परिचय केवल जानकारी नहि, परिवारक विश्वास सेहो अछि।</p></div><div class="features">
-<div class="feature"><div class="ico">🛡️</div><h3>Admin समीक्षा</h3><p>प्रत्येक आवेदन जाँचक बादे सार्वजनिक सूची में शामिल होयत।</p></div>
-<div class="feature"><div class="ico">🤝</div><h3>सहमति-आधारित संपर्क</h3><p>फोन नंबर वा निजी फोटो बिना परिवारक अनुमति साझा नहि होयत।</p></div>
-<div class="feature"><div class="ico">🌺</div><h3>मैथिल पहचान</h3><p>अपन भाषा, परंपरा आ समाजक संदर्भ में परिचय।</p></div>
+<div class="field">
+  <label>शिक्षा</label>
+  <select id="sEducation">
+    <option value="">सभ शिक्षा</option>
+    <option>मैट्रिक</option>
+    <option>इंटरमीडिएट</option>
+    <option>स्नातक</option>
+    <option>स्नातकोत्तर</option>
+    <option>इंजीनियरिंग</option>
+    <option>चिकित्सा</option>
+    <option>अन्य</option>
+  </select>
+</div>
+
+<div class="field">
+  <label>पेशा</label>
+  <input id="sProfession" placeholder="पेशा लिखू">
+</div>
+
+<div class="field">
+  <label>नौकरीक प्रकार</label>
+  <select id="sJobType">
+    <option value="">सभ प्रकार</option>
+    <option value="सरकारी">सरकारी नौकरी</option>
+    <option value="निजी">निजी नौकरी</option>
+    <option value="व्यवसाय">व्यवसाय</option>
+    <option value="स्वरोजगार">स्वरोजगार</option>
+    <option value="अन्य">अन्य</option>
+  </select>
+</div>
+
+<div class="field">
+  <label>समुदाय</label>
+  <select id="sCommunity">
+    <option value="">सभ समुदाय</option>
+    <option>ब्राह्मण</option>
+    <option>राजपूत</option>
+    <option>भूमिहार</option>
+    <option>कायस्थ</option>
+  </select>
+</div>
+
+<div class="field">
+  <label>वैवाहिक स्थिति</label>
+  <select id="sMarital">
+    <option value="">सभ</option>
+    <option>अविवाहित</option>
+    <option>तलाकशुदा</option>
+    <option>विधवा / विधुर</option>
+  </select>
+</div>
+
+</div>
+<div class="search-actions">
+  <button class="btn" onclick="searchProfiles()">🔎 परिचय खोजू</button>
+  <button class="btn light" onclick="clearSearch()">Reset</button>
+</div>
+<div class="msg" id="searchMsg"></div>
+</div>
+</div>
+</section>
+
+<section id="profiles">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">RECENTLY APPROVED</div>
+      <h2>नवीन स्वीकृत परिचय</h2>
+      <p>एतय केवल Admin द्वारा स्वीकृत सार्वजनिक जानकारी देखाओल जाएत।</p>
+    </div>
+    <div class="profiles" id="profileList">
+      <div class="empty">नवीन परिचय लोड भ' रहल अछि…</div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">हमर मंचक विशेषता</div>
+      <h2>भरोसा, मर्यादा आ निजता</h2>
+      <p>वैवाहिक परिचय केवल जानकारी नहि, परिवारक विश्वास सेहो अछि।</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="ico">🛡️</div>
+        <h3>Admin समीक्षा</h3>
+        <p>प्रत्येक आवेदन जाँचक बादे सार्वजनिक सूची में शामिल होयत।</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🤝</div>
+        <h3>सहमति-आधारित संपर्क</h3>
+        <p>फोन नंबर वा निजी फोटो बिना परिवारक अनुमति साझा नहि होयत।</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🌺</div>
+        <h3>मैथिल पहचान</h3>
+        <p>अपन भाषा, परंपरा आ समाजक संदर्भ में परिचय।</p>
+      </div>
+    </div>
+  </div>
+</section>
 </div></div></section>
 <section class="soft" id="community"><div class="wrap"><div class="section-head"><div class="kicker">मैथिल समाजक परिवार</div><h2>मैथिल परिवार सभसँ जुड़ू</h2><p>निःशुल्क WhatsApp समूह में जुड़बाक लेल मंचकेँ संदेश पठाउ। समूह लिंक Admin द्वारा साझा कएल जाएत।</p></div><div class="quick-grid"><div class="quick"><div><h3>निःशुल्क वर-वधू समूह</h3><p>मैथिल परिवारक वैवाहिक परिचय आ मंचक सूचना</p><a class="btn small" style="margin-top:12px" href="https://wa.me/916299735655?text=हमरा%20निःशुल्क%20विवाह%20समूह%20मे%20जुड़बाक%20अछि" target="_blank" rel="noopener">WhatsApp पर जुड़ू</a></div><span class="symbol">👥</span></div><div class="quick"><div><h3>Premium जानकारी</h3><p>सदस्यता, सुविधा आ भुगतान प्रक्रिया Admin सँ पूछू</p><a class="btn light small" style="margin-top:12px" href="https://wa.me/916299735655?text=Premium%20सदस्यता%20क%20जानकारी%20चाही" target="_blank" rel="noopener">जानकारी लिअ</a></div><span class="symbol">💎</span></div></div></div></section>
 <section id="plans"><div class="wrap"><div class="section-head"><div class="kicker">परिवारक सहयोग</div><h2>मंचक संचालन में अहाँक सहयोग</h2><p>ई अनिवार्य सदस्यता नहि अछि। इच्छुक परिवार मंचक सेवा जारी रखबाक लेल स्वेच्छासँ सहयोग क' सकैत छथि।</p></div><div class="plans">
@@ -131,8 +223,8 @@ footer{background:#2c1822;color:#f7e9df;padding:48px 0 20px}.footgrid{display:gr
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 /* Supabase: only publishable/anon key belongs here. Never use service_role. */
-const SUPABASE_URL = "PASTE_SUPABASE_PROJECT_URL";
-const SUPABASE_ANON_KEY = "PASTE_SUPABASE_PUBLISHABLE_OR_ANON_KEY";
+const SUPABASE_URL = "https://ddkvtyqcdtamxstbhzmb.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_FpZyRm8Uh8x-NHXyrnokMA_Zv5T7EGY";
 let sb = null, sessionUser = null, isMvmAdmin = false;
 const PRIVATE_BUCKET = "biodata-private";
 const communityNames = ["ब्राह्मण","राजपूत","भूमिहार","कायस्थ"];
